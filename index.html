@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!--Stylesheet Link-->
-    <link rel="stylesheet" href="style.css">
-    <!--Script File-->
-    <link href="script.js">
-    <title>Dyanmic Clock </title>
-</head>
-<body>
-   <div class="hero">
-        <div class="container">
-            <div class="Clock">
-                00:00:00
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Stylesheet Link-->
+    <link rel="stylesheet" href="style.css" />
 
+    <title>Dyanmic Clock</title>
+  </head>
+  <body>
+    <div class="fluid-container">
+      <div class="row">
+        <div class="col-12 col-l-12 col-md-12 col-s-12">
+          <div class="hero">
+            <div class="container">
+              <div class="clock">
+                <label id="hrs">00</label>
+                <label>:</label>
+                <label id="min">00</label>
+                <label>:</label>
+                <label id="sec">00</label>
+              </div>
             </div>
-
+          </div>
         </div>
+      </div>
+    </div>
 
-   </div>
-</body>
+    <script>
+      let hrs = document.getElementById("hrs");
+      let min = document.getElementById("min");
+      let sec = document.getElementById("sec");
+      setInterval(() => {
+        let currentTime = new Date();
+
+        hrs.innerHTML = currentTime.getHours();
+        min.innerHTML = currentTime.getMinutes();
+        sec.innerHTML = currentTime.getSeconds();
+      }, 1000);
+    </script>
+  </body>
 </html>
